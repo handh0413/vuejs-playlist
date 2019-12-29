@@ -10,10 +10,15 @@
 </head>
 <body>
     <div id="vue-app">
-        <!-- {{ }} 문법으로 메소드를 호출할 수 있다.(메소드에 파라미터 전달도 가능) -->
-        <h1>{{ greet('night') }} </h1>
-        <p>Name: {{name}}</p>
-        <p>Job: {{job}}</p>
+        <h1>Data Binding</h1>
+        <!-- a 태그의 href attribute에 Vue 인스턴스 data를 바인딩하고 싶다면 v-bind를 붙여야 한다 -->
+        <a v-bind:href="website">Naver1</a><br/>
+        <!-- : 만 붙여도 v-bind가 동작한다. -->
+        <a :href="website">Naver2</a><br/>
+        <input type="text" v-bind:value="name"><br/>
+        <input type="text" :value="job">
+        <!-- Vue 인스턴스의 data로 입력한 태그 정보를 출력하기 -->
+        <p v-html="websiteTag"></p>
     </div>
 
     <script src="app.js"></script>
