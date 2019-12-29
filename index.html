@@ -10,8 +10,10 @@
 </head>
 <body>
     <div id="vue-app">
-        <!-- {{ }} 문법을 이용하여 Vue 인스턴스 데이터 정보를 가져온다. -->
-        <h1>{{name}}</h1>
+        <!-- {{ }} 문법으로 메소드를 호출할 수 있다.(메소드에 파라미터 전달도 가능) -->
+        <h1>{{ greet('night') }} </h1>
+        <p>Name: {{name}}</p>
+        <p>Job: {{job}}</p>
     </div>
 
     <script src="app.js"></script>
