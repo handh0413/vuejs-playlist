@@ -10,15 +10,19 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>Data Binding</h1>
-        <!-- a 태그의 href attribute에 Vue 인스턴스 data를 바인딩하고 싶다면 v-bind를 붙여야 한다 -->
-        <a v-bind:href="website">Naver1</a><br/>
-        <!-- : 만 붙여도 v-bind가 동작한다. -->
-        <a :href="website">Naver2</a><br/>
-        <input type="text" v-bind:value="name"><br/>
-        <input type="text" :value="job">
-        <!-- Vue 인스턴스의 data로 입력한 태그 정보를 출력하기 -->
-        <p v-html="websiteTag"></p>
+        <h1>Events</h1>
+        <!-- 이벤트를 감지하기 위해서는 v-on:을 이용한다. -->
+        <!-- v-on: 안에서는 Vue 인스턴스 data 프로퍼티에 직접 접근이 가능하다. -->
+        <!-- v-on: 안에서는 Vue 인스턴스 methods 프로퍼티에 직접 접근이 가능하다. -->
+        <!-- v-on: 은 @로 대체 가능하다. -->
+        <button v-on:click="add(1)">Add a Year</button>
+        <button @click="subtract(1)">Subtract a Year</button>
+        <button v-on:dblclick="add(10)">Add 10 Years</button>
+        <button @dblclick="subtract(10)">Subtract 10 Years</button>
+        <p>My age is {{ age }} </p>
+        <div id="canvas" v-on:mousemove="updateXY">
+            {{x}}, {{y}}
+        </div>
     </div>
 
     <script src="app.js"></script>
