@@ -10,15 +10,15 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>Keyboard Events</h1>
-        <label>Name:</label>
-        <input type="text" v-model="name" />
-        <!-- v-model="name"을 통해 입력된 값을 Vue instance property와 매핑 가능 -->
-        <span>{{ name }}</span>
-        <label>Age:</label>
-        <input type="text" v-model="age" />
-        <!-- v-model="age"을 통해 입력된 값을 Vue instance property와 매핑 가능 -->
-        <span>{{ age }}</span>
+        <h1>Computed Properties</h1>
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <p>A = {{a}}</p>
+        <p>B = {{b}}</p>
+        <!-- methods의 경우에는 addToA()를 호출하면 상관 없는 addToB()도 같이 호출된다.-->
+        <!-- computed의 경우에는 addToA()를 호출하면 상관 없는 addToB()는 호출되지 않는다.-->
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
     </div>
 
     <script src="app.js"></script>
