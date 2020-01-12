@@ -12,13 +12,13 @@
     <div id="vue-app">
         <h1>Keyboard Events</h1>
         <label>Name:</label>
-        <!-- v-on:keyup : 키보드에서 손을 뗐을 때 이벤트 발생 -->
-        <!-- v-on:keyup.enter : 엔터 키보드에서 손을 뗐을 때 이벤트 발생 -->
-        <input type="text" v-on:keyup.enter="logName" />
+        <input type="text" v-model="name" />
+        <!-- v-model="name"을 통해 입력된 값을 Vue instance property와 매핑 가능 -->
+        <span>{{ name }}</span>
         <label>Age:</label>
-        <!-- v-on:keyup : 키보드에서 손을 뗐을 때 이벤트 발생 -->
-        <!-- v-on:keyup.alt.enter : ALT + 엔터 키보드에서 손을 뗐을 때 이벤트 발생 -->
-        <input type="text" v-on:keyup.alt.enter="logAge" />
+        <input type="text" v-model="age" />
+        <!-- v-model="age"을 통해 입력된 값을 Vue instance property와 매핑 가능 -->
+        <span>{{ age }}</span>
     </div>
 
     <script src="app.js"></script>
