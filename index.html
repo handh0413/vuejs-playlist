@@ -6,22 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Document</title>
+    <title>VueJS Tutorials</title>
 </head>
 <body>
     <div id="vue-app">
-        <h1>Events</h1>
-        <!-- event modifier once : 이벤트를 딱 한번만 처리한다. -->
-        <button v-on:click.once="add(1)">Add a Year</button>
-        <button @click="subtract(1)">Subtract a Year</button>
-        <button v-on:dblclick="add(10)">Add 10 Years</button>
-        <button @dblclick="subtract(10)">Subtract 10 Years</button><br/>
-        <!-- event modifier prevent : 태그의 기본 동작을 수행하지 않는다.. -->
-        <a v-on:click.prevent="click" href="https://www.naver.com">Naver 접속</a><br/>
-        <p>My age is {{ age }} </p>
-        <div id="canvas" v-on:mousemove="updateXY">
-            {{x}}, {{y}}
-        </div>
+        <h1>Keyboard Events</h1>
+        <label>Name:</label>
+        <!-- v-on:keyup : 키보드에서 손을 뗐을 때 이벤트 발생 -->
+        <!-- v-on:keyup.enter : 엔터 키보드에서 손을 뗐을 때 이벤트 발생 -->
+        <input type="text" v-on:keyup.enter="logName" />
+        <label>Age:</label>
+        <!-- v-on:keyup : 키보드에서 손을 뗐을 때 이벤트 발생 -->
+        <!-- v-on:keyup.alt.enter : ALT + 엔터 키보드에서 손을 뗐을 때 이벤트 발생 -->
+        <input type="text" v-on:keyup.alt.enter="logAge" />
     </div>
 
     <script src="app.js"></script>
