@@ -10,15 +10,27 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>Computed Properties</h1>
-        <button v-on:click="a++">Add to A</button>
-        <button v-on:click="b++">Add to B</button>
-        <p>A = {{a}}</p>
-        <p>B = {{b}}</p>
-        <!-- methods의 경우에는 addToA()를 호출하면 상관 없는 addToB()도 같이 호출된다.-->
-        <!-- computed의 경우에는 addToA()를 호출하면 상관 없는 addToB()는 호출되지 않는다.-->
-        <p>Age + A = {{ addToA }}</p>
-        <p>Age + B = {{ addToB }}</p>
+        <h1>Dynamic CSS</h1>
+        <h2>Example 1</h2>
+        
+        <!-- {red: true}이면 div 요소가 class="red" 애트리뷰트 추가된다.-->
+        <!-- {red: false}이면 div 요소가 class="red" 애트리뷰트 추가되지 않는다.-->
+        <!-- <div v-bind:class="{red: true, blue: true}"></div> -->
+        
+        <!-- v-on:click을 이용하여 class 속성에 대한 true, false 받아오기 -->
+        <!--
+        <div v-on:click="available = !available" v-bind:class="{available: available}">
+            <span>Ryu</span>
+        </div>
+        -->
+
+        <!-- v-on:click을 이용하여 class 속성 객체 받아오기 -->
+        <h2>Example 2</h2>
+        <button v-on:click="nearby = !nearby">Toggle nearby</button>
+        <button v-on:click="available = !available">Toggle available</button>
+        <div v-bind:class="compClasses">
+            <span>Ryu</span>
+        </div>
     </div>
 
     <script src="app.js"></script>
